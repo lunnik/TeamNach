@@ -1,0 +1,9 @@
+apply from: "$rootDir/common-android-library.gradle"
+
+
+dependencies {
+    implementation(project(Modules.DOMAIN))
+    implementation(project(Modules.DATA_SOURCE))
+    /* KOIN */
+    implementation Dependencies.KOIN
+}

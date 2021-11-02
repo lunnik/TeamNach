@@ -1,0 +1,72 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion DefaultConfig.COMPILE_SDK
+
+    defaultConfig {
+        minSdkVersion DefaultConfig.MIN_ANDROID_SDK
+        targetSdkVersion DefaultConfig.TARGET_ANDROID_SDK
+        versionCode Releases.versionCode
+        versionName Releases.versionName
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation Dependencies.JET_BRAINS_KOTLIN
+    /* ANDROID X */
+    implementation Dependencies.CORE_KTX
+    implementation Dependencies.LEGACY_SUPPORT
+    /* DEBUG */
+    implementation Dependencies.TIMBER
+    /* RETROFIT */
+    implementation Dependencies.RETROFIT
+    implementation Dependencies.GSON_CONVERTER
+    implementation Dependencies.RETROFIT_INTERCEPTOR
+    /* MOSHI */
+    implementation Dependencies.MOSHI_KOTLIN
+    implementation Dependencies.MOSHI_CONVERTER
+    implementation Dependencies.MOSHI_CODEGEN
+    /* ROOM */
+    implementation Dependencies.ROOM_RUNTIME
+    implementation Dependencies.ROOM_KTX
+    kapt Dependencies.ROOM_COMPILER
+    /* KOIN */
+    implementation Dependencies.KOIN
+    /* Lifecycle */
+    implementation Dependencies.LIFECYCLE_LIVE_DATA
+    implementation Dependencies.LIFECYCLE_EXTENSIONS
+    implementation Dependencies.LIFECYCLE_VIEW_MODEL
+    /* COROUTINES */
+    api Dependencies.COROUTINES_CORE
+    api Dependencies.COROUTINES_ANDROID
+    api Dependencies.COROUTINES_PLAY_SERVICE
+    /* TESTING */
+    testImplementation Dependencies.JUNIT
+    androidTestImplementation Dependencies.TEST_JUNIT
+    androidTestImplementation Dependencies.ESPRESSO_CORE
+}

@@ -1,0 +1,7 @@
+include (":app")
+rootProject.name = ("Natch")
+include(":domain")
+include(":network")
+include(":data_source")
+include(":movie")
+include(":cache")

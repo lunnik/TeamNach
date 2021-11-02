@@ -1,0 +1,12 @@
+apply from: "$rootDir/common-android-library.gradle"
+
+dependencies {
+    /* ROOM */
+    implementation(Dependencies.ROOM_RUNTIME)
+    implementation(Dependencies.ROOM_KTX)
+    kapt(Dependencies.ROOM_COMPILER)
+
+    implementation(project(Modules.DOMAIN))
+    implementation(project(Modules.DATA_SOURCE))
+    implementation(project(Modules.NETWORK))
+}
