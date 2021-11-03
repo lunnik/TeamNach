@@ -8,9 +8,6 @@ import timber.log.Timber
 
 class NachApplication : Application() {
 
-    companion object {
-        fun getInstance() = NachApplication()
-    }
 
     override fun onCreate() {
         super.onCreate()

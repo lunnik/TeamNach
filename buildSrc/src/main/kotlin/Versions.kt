@@ -5,7 +5,7 @@
 object Versions {
     const val KOTLIN_VERSION = "1.4.30"
     const val KTX_VERSION = "1.3.1"
-    const val CORE_KTX_VERSION = "1.7.0"
+    const val CORE_KTX_VERSION = "1.6.0"
     const val CONSTRAINT_VERSION = "1.1.3"
     const val JUNIT_VERSION = "4.13"
     const val TEST_JUNIT_VERSION = "1.1.1"

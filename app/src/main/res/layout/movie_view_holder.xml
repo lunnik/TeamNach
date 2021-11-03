@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_size_08"
+        android:layout_marginTop="@dimen/dimen_size_08"
+        android:layout_marginEnd="@dimen/dimen_size_16"
+        android:layout_marginBottom="@dimen/dimen_size_16"
+        app:cardCornerRadius="@dimen/dimen_size_20"
+        app:cardElevation="@dimen/dimen_size_04">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_banner"
+                android:layout_width="@dimen/image_size_lateral"
+                android:layout_height="@dimen/image_size_lateral"
+                android:layout_margin="@dimen/dimen_size_20"
+                android:contentDescription="@null"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/tv_title_movie"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_size_20"
+                android:layout_marginEnd="@dimen/dimen_size_20"
+                app:layout_constraintBottom_toTopOf="@+id/tv_overview_movie"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/iv_banner"
+                app:layout_constraintTop_toTopOf="@+id/iv_banner"
+                tools:text="@string/title_movie_dummy" />
+
+            <TextView
+                android:id="@+id/tv_overview_movie"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_size_20"
+                android:layout_marginEnd="@dimen/dimen_size_20"
+                android:maxLength="100"
+                app:layout_constraintBottom_toTopOf="@+id/tv_vote_average"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/iv_banner"
+                app:layout_constraintTop_toBottomOf="@+id/tv_title_movie"
+                tools:text="@string/overview_movie_dummy" />
+
+            <TextView
+                android:id="@+id/tv_vote_average"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_size_20"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_banner"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/iv_banner"
+                app:layout_constraintTop_toBottomOf="@+id/tv_overview_movie"
+                tools:text="@string/vote_movie_dummy" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</layout>

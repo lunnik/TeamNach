@@ -2,7 +2,6 @@
 plugins {
     id("com.android.application")
     id("kotlin-android")
-    id("kotlin-android-extensions")
     id("kotlin-kapt")
     id("androidx.navigation.safeargs.kotlin")
 }
@@ -17,6 +16,11 @@ android {
         versionCode = Releases.versionCode
         versionName = Releases.versionName
         testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
+        configurations.all {
+            resolutionStrategy {
+                this.force(Dependencies.CORE_KTX)
+            }
+        }
     }
 
     flavorDimensions(App.DIMENSION)
@@ -35,10 +39,11 @@ android {
 
     buildTypes {
         getByName("debug") {
-            isUseProguard = false
+            minifyEnabled(false)
         }
 
         getByName("release") {
+            minifyEnabled(true)
             proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
         }
     }
@@ -48,7 +53,6 @@ android {
     }
 
     packagingOptions {
-        exclude("META-INF/authentication_release.kotlin_module")
         exclude("META-INF/*.kotlin_module")
     }
 

@@ -3,6 +3,7 @@ package com.example.grueponach.di
 import com.example.data_source.data_source.httpClientModule
 import com.example.grueponach.NachApplication
 import com.example.grueponach.di.shared_module.serverUrlProvider
+import com.example.grueponach.presentation.movieModulePresentation
 import com.example.movie.movieModule
 import com.example.network.networkModule
 import org.koin.android.ext.android.startKoin
@@ -38,4 +39,5 @@ private fun getFeatureModules(): List<Module> = listOf( movieModule
  *
  */
 private fun getPresentationModules(): List<Module> = listOf(
+    movieModulePresentation
 )

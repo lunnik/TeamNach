@@ -9,7 +9,7 @@ object DefaultConfig {
     const val TARGET_ANDROID_SDK = 30
 
     /* */
-    const val COMPILE_SDK = 31
+    const val COMPILE_SDK = 30
 
     /* */
     const val BUILD_TOOLS_VERSION = "30.0.3"

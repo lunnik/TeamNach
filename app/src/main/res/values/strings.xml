@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">GruepoNach</string>
+    <string name="title_movie_dummy">Title dummy</string>
+    <string name="overview_movie_dummy">overview movie dummy</string>
+    <string name="vote_movie_dummy">5.4</string>
+
+    <!-- COMMON: Failure -->
+    <string name="failure_network_connection">No cuentas con conexión a internet</string>
+    <string name="failure_http_code">Código: %d - Mensaje: %s</string>
+    <string name="failure_unknown">Ocurrió un error: %s</string>
+
 </resources>

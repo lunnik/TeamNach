@@ -12,7 +12,7 @@ import timber.log.Timber
 import com.example.data_source.data_source.exception.message
 
 internal class MovieDataSourceRemote(
-    private val MovieApiServices: MovieApiServices,
+    private val movieApiServices: MovieApiServices,
     private val movieDao: MovieDao
 ) : MovieDataSource {
 
@@ -22,11 +22,9 @@ internal class MovieDataSourceRemote(
         try {
             retrofitApiCall {
                 val apiKey = "0a05362c0528a291af53ffd6bb8f64c7"
-                MovieApiServices.getMoviePopular(apiKey)
+                movieApiServices.getMoviePopular(apiKey)
             }.let {
-                it.toMovie().results.forEach {
-                    movieDao.createMovieResult(it)
-                }
+                movieDao.createMovieResult(it.toMovie().results)
                 Either.Right(GetMoviePopularResponse(it.toMovie().results))
             }
         } catch (exception: Exception) {

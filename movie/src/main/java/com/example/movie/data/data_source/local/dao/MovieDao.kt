@@ -11,9 +11,9 @@ internal interface MovieDao {
 
     /** */
     @Query("SELECT * FROM MovieResult")
-     fun getMoviePopular(): List<MovieResult>
+    suspend  fun getMoviePopular(): List<MovieResult>
 
     /** */
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun createMovieResult(movieResults: MovieResult)
+    suspend fun createMovieResult(movieResults: List<MovieResult>)
 }

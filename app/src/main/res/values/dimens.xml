@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="image_size_lateral">150dp</dimen>
+    <dimen name="image_size_vertical">200dp</dimen>
+    <dimen name="margin_lateral">20dp</dimen>
+    <dimen name="margin_vertical">20dp</dimen>
+    <dimen name="dimen_size_20">20dp</dimen>
+    <dimen name="dimen_size_04">4dp</dimen>
+    <dimen name="dimen_size_08">8dp</dimen>
+    <dimen name="dimen_size_16">16dp</dimen>
+</resources>

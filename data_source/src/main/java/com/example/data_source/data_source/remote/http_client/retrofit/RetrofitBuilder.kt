@@ -1,6 +1,5 @@
 package com.example.data_source.data_source.remote.http_client.retrofit
 
-import com.example.data_source.data_source.remote.http_client.HeaderInterceptor
 import com.example.data_source.domain.ServerUrlProvider
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -12,8 +11,7 @@ import java.util.concurrent.TimeUnit
  *
  */
 class RetrofitBuilder(
-    private val serverUrlProvider: ServerUrlProvider,
-    private val headerInterceptor: HeaderInterceptor? = null
+    private val serverUrlProvider: ServerUrlProvider
 ) {
 
     /* */
