@@ -1,5 +1,43 @@
 apply from: "$rootDir/common-android-library.gradle"
 
+apply plugin: 'maven-publish'
+
+def githubProperties = new Properties()
+githubProperties.load(new FileInputStream(rootProject.file("github.properties")))
+def groupIdValue = "com.argaed.libs"
+def versionValue = "1.0.0"
+def artifactIdValue = "network"
+
+task sourceJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier "sources"
+}
+
+publishing {
+
+    publications {
+        bar(MavenPublication) {
+            groupId groupIdValue
+            artifactId artifactIdValue
+            version versionValue
+            artifact(sourceJar)
+            artifact("$buildDir/outputs/aar/network-release.aar")
+        }
+    }
+
+    repositories {
+        maven {
+            name = "lunnikPackages"
+            url = uri("https://maven.pkg.github.com/lunnik/TeamNach")
+            credentials {
+                username = githubProperties['gpr.usr'] ?: System.getenv("GPR_USER")
+                password = githubProperties['gpr.key'] ?: System.getenv("GPR_API_KEY")
+            }
+        }
+    }
+
+}
+
 
 dependencies {
     implementation(project(Modules.DOMAIN))
